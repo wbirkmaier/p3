@@ -20,4 +20,4 @@ I plan to do an in person demo in my Section after Thursday's lecture in front o
 + No Login is required.
 
 ### Plugins and Outside Code used Credits:
-+ Used Bootstrap v3.2.0 from <https://packagist.org/packages/twbs/bootstrap> which is based off of <http://getbootstrap.com/> .
++ Used Bootstrap v3.2.0 from <http://getbootstrap.com/> via <https://github.com/twbs/bootstrap/releases/download/v3.2.0/bootstrap-3.2.0-dist.zip>
