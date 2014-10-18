@@ -21,6 +21,12 @@ Route::get('/lorem-ipsum-generate', function()
         return View::make('lorem');
 });
 
+Route::post('/lorem-ipsum-generate', function()
+{
+    $data = Input::all();
+    var_dump($data);
+});
+
 Route::get('/random-user-generate', function()
 {
         return View::make('user');
