@@ -13,5 +13,20 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return 'welcome';
+});
+
+Route::get('/lorem-ipsum-generate', function()
+{
+        return 'lorem';
+});
+
+Route::get('/random-user-generate', function()
+{
+        return 'user';
+});
+
+App::missing(function($exception)
+{
+        return 'oops';
 });
