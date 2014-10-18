@@ -18,13 +18,13 @@ Route::get('/', function()
 
 Route::get('/lorem-ipsum-generate', function()
 {
-        return View::make('lorem');
+	return View::make('lorem', array('loremPost' => ''));
 });
 
 Route::post('/lorem-ipsum-generate', function()
 {
-    $data = Input::all();
-    var_dump($data);
+	$postData = Input::get('loremLength');
+	return View::make('lorem', array('loremPost' => $postData));
 });
 
 Route::get('/random-user-generate', function()
