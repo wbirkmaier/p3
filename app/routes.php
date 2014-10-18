@@ -18,15 +18,15 @@ Route::get('/', function()
 
 Route::get('/lorem-ipsum-generate', function()
 {
-        return 'lorem';
+        return View::make('lorem');
 });
 
 Route::get('/random-user-generate', function()
 {
-        return 'user';
+        return View::make('user');
 });
 
 App::missing(function($exception)
 {
-        return 'oops';
+        return View::make('oops');
 });
