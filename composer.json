@@ -3,6 +3,10 @@
 	"description": "Developer's Best Friend.",
 	"keywords": ["framework", "laravel", "lorem", "ipsum", "random", "generator"],
 	"license": "MIT",
+	"authors": [{
+		"name": "Wil Birkmaier",
+		"email": "wil@birkmaier.org"
+        	}],
 	"require": {
 		"laravel/framework": "4.2.*",
 		"badcow/lorem-ipsum": "dev-master",
