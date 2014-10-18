@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return 'welcome';
+	return View::make('index');
 });
 
 Route::get('/lorem-ipsum-generate', function()
