@@ -39,7 +39,7 @@ Route::post('/lorem-ipsum-generate', function()
         $maxParagraphs=99;
 
 	/*Set number of paragraphs for lorem ipsum*/
-        if ($postData  == "" || $postData > $maxParagraphs) {
+        if ($postData  == "" || $postData > $maxParagraphs || $postData == 0) {
                 $loremAmount=rand(1,3);
         }
 	else {
@@ -62,21 +62,29 @@ Route::get('/random-user-generate', function()
 
         /*Create an instance*/
         $faker = Faker\Factory::create();
+	
+	/*Build array for random single user*/	
+	$singleUser=array($faker->name, $faker->address, $faker->text);
+	$singleUser=implode('<br>', $singleUser);
 
-        return View::make('user', array('appOut' => $faker));
+        return View::make('user', array('appOut' => $singleUser));
 });
 
 Route::post('/random-user-generate', function()
 {
 	/*Get post data from submitted page*/
         $postData = Input::get('userLength');
+	$addressData = Input::get('includeAddress');
+	$bioData = Input::get('includeBio');
+	
+	$manyUsers="";
 
 	/*Max number of users*/
         $maxUsers=99;
 
-	/*Set number of paragraphs for lorem ipsum*/
-        if ($postData  == "" || $postData > $maxUsers) {
-                $userAmount=rand(1,3);
+	/*Set number of random users*/
+        if ($postData  == "" || $postData > $maxUsers || $postData == 0) {
+                $userAmount=rand(1,10);
         }
         else {
                 $userAmount=$postData;
@@ -87,10 +95,16 @@ Route::post('/random-user-generate', function()
         require_once $fakerPath;
 
         /*Create an instance*/
+	$faker = Faker\Factory::create();
 	
-        $faker = Faker\Factory::create();
+	/*Generate user list*/
+	for ($i = 0; $i < $userAmount;  ++$i) {
+		$fakeUser=array($faker->name, $faker->address, $faker->text);
+	        $fakeUser=implode('<br>', $fakeUser);
+		$manyUsers=$manyUsers . "<br><br>" . $fakeUser;
+	}
 
-	return View::make('user', array('appOut' => $faker));
+	return View::make('user', array('appOut' => $manyUsers));
 });
 
 

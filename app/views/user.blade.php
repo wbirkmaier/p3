@@ -27,28 +27,27 @@
 
                 <legend>Random User Generator</legend>
 
-                <label for="userLength"><b>Enter a number between 1 and 99 for the number of random users to create.</b></label><br>
+                <label for="userLength"><b>Enter a number between 1 and 99 for the number of random users to create or click the generate button for a random amount.</b></label><br>
                 <input type="text" id="userLength" name="userLength" placeholder="Enter Number"><br>
                 <br>
-                <input type="checkbox" id="numberChar" name="numberChar" value="true" <?php if(isset($_POST["numberChar"])) echo "checked='checked'"; ?> >
-                <label for="numberChar"> Include Address</label><br>
+                <input type="checkbox" id="includeAddress" name="includeAddress" value="true" <?php if(isset($_POST["includeAddress"])) echo "checked='checked'"; ?> >
+                <label for="includeAddress"> Include Address</label><br>
 
-                <input type="checkbox" id="specialChar" name="specialChar" value="true" <?php if(isset($_POST["specialChar"])) echo "checked='checked'"; ?> >
-                <label for="specialChar"> Include Biography</label><br>
+                <input type="checkbox" id="includeBio" name="includeBio" value="true" <?php if(isset($_POST["includeBio"])) echo "checked='checked'"; ?> >
+                <label for="includeBio"> Include Biography</label><br>
                 <br>
-                <input type="submit" value="Generate Text">
+                <input type="submit" value="Generate Users">
 
         </fieldset>
 
         <fieldset>
                 <legend>Your random user(s) are:</legend>
-                <p id="passwordOut"><?=$appOut->name?><br><?=$appOut->address?><br><?=$appOut->text?></p>
+		<p id="userOut"><?=$appOut?></p>
+		<br>
         </fieldset>
 
         </form>
 
-	</p>
-	<br>
 	<p>You can <a href='/'>Return Home</a> from this place.</p>
 
 </body>
