@@ -104,7 +104,7 @@ Route::post('/random-user-generate', function()
 		for ($i = 0; $i < $userAmount;  ++$i) {
 			$fakeUser=array($faker->name, $faker->address, $faker->dateTimeThisCentury->format('m-d-Y'));
 		        $fakeUser=implode('<br>', $fakeUser);
-			$manyUsers=$manyUsers . "<br><br>" . $fakeUser;
+			$manyUsers=$fakeUser . "<br><br>" . $manyUsers;
 		}
 	}
 
@@ -112,7 +112,7 @@ Route::post('/random-user-generate', function()
 		for ($i = 0; $i < $userAmount;  ++$i) {
                         $fakeUser=array($faker->name, $faker->address);
                         $fakeUser=implode('<br>', $fakeUser);
-                        $manyUsers=$manyUsers . "<br><br>" . $fakeUser;
+                        $manyUsers=$fakeUser . "<br><br>" . $manyUsers;
                 }
 	}
 	
@@ -120,14 +120,14 @@ Route::post('/random-user-generate', function()
                 for ($i = 0; $i < $userAmount;  ++$i) {
                         $fakeUser=array($faker->name, $faker->dateTimeThisCentury->format('m-d-Y'));
                         $fakeUser=implode('<br>', $fakeUser);
-                        $manyUsers=$manyUsers . "<br><br>" . $fakeUser;
+                        $manyUsers=$fakeUser . "<br><br>" . $manyUsers;
                 }
         }
 	else {
 		for ($i = 0; $i < $userAmount;  ++$i) {
                         $fakeUser=array($faker->name);
                         $fakeUser=implode('<br>', $fakeUser);
-                        $manyUsers=$manyUsers . "<br><br>" . $fakeUser;
+                        $manyUsers=$fakeUser . "<br><br>" . $manyUsers;
                 }
 	}
 
