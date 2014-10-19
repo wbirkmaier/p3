@@ -1,22 +1,7 @@
-<!DOCTYPE html>
+@extends('_master')
 
-	<!--	Dynamic Web Applications Fall 2014  					-->
-	<!--    Project Number 3		    					-->
-	<!--    Wil Birkmaier			    					-->
-	<!--    First Project with Laravel generating lorem ipsum and user text		-->
+@section('content')
 
-<html>
-
-<head>
-
-	<title>Project 3 - Developer's Best Friend</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css"/>
-	<meta charset="UTF-8">
-	<meta name="robots" content="noindex">
-
-</head>
-
-<body>
 	<h1>Developer's Best Friend</h1>
 	<br>
 	<h2>Lorem Ipsum</h2>
@@ -28,6 +13,4 @@
 	<p>Keep Calm and <a href='/random-user-generate'>Generate</a> On</p>
 	<br>
 
-</body>
-
-</html>
+@stop
