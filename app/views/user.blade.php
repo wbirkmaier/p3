@@ -12,7 +12,7 @@
 	
 	<h2>Random User</h2>
 	<p>Sometimes you need the ability to populate a database with random user information.</p>
-	<p>
+	<br>
 
 	<form action="{{ url('/random-user-generate') }}" method="post">
 
@@ -41,5 +41,6 @@
         </form>
 
 	<p>You can <a href='/'>Return Home</a> from this place.</p>
+
 
 @stop

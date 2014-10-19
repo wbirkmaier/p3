@@ -55,9 +55,8 @@
 		<div class="starter-template">
 			<p class="lead">
 
-			@yield('content')	
-
-			</p>
+			@yield('content')
+			
 		</div>
 	</div>	
 
