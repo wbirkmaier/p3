@@ -1,8 +1,16 @@
 @extends('_master')
 
+@section('active')
+
+        <li><a href="/">Home</a></li>
+        <li><a href="/lorem-ipsum-generate">Lorem Ipsum Generator</a></li>
+        <li class="active"><a href="/random-user-generate">Random User Generator</a></li>
+
+@stop
+
 @section('content')
 	
-	<h1>Random User</h1>
+	<h2>Random User</h2>
 	<p>Sometimes you need the ability to populate a database with random user information.</p>
 	<p>
 

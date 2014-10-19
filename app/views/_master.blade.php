@@ -38,13 +38,13 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Developer's Best Friend</a>
+				<a class="navbar-brand" href="/">Developer's Best Friend</a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="/">Home</a></li>
-					<li><a href="/lorem-ipsum-generate">Lorem Ipsum Generator</a></li>
-					<li><a href="/random-user-generate">Random User Generator</a></li>
+	
+					@yield('active')
+
 				</ul>
 			</div>
 		</div>

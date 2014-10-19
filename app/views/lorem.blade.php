@@ -1,8 +1,16 @@
 @extends('_master')
 
+@section('active')
+
+        <li><a href="/">Home</a></li>
+        <li class="active"><a href="/lorem-ipsum-generate">Lorem Ipsum Generator</a></li>
+        <li><a href="/random-user-generate">Random User Generator</a></li>
+
+@stop
+
 @section('content')
 
-	<h1>Lorem Ipsum</h1>
+	<h2>Lorem Ipsum</h2>
 	<p>Lorem Ipsum is dummy text that is used in order to facilitate page layouts, where text is needed, but the focus is on the layout rather than the content. Most viewers have a tendancy to focus on the text rather than the layout, this prevents that.</p>
 
 	<form action="{{ url('/lorem-ipsum-generate') }}" method="post">

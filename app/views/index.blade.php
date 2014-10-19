@@ -1,5 +1,13 @@
 @extends('_master')
 
+@section('active')
+
+	<li class="active"><a href="/">Home</a></li>
+        <li><a href="/lorem-ipsum-generate">Lorem Ipsum Generator</a></li>
+        <li><a href="/random-user-generate">Random User Generator</a></li>
+
+@stop
+
 @section('content')
 
 	<h2>Lorem Ipsum</h2>
