@@ -56,8 +56,43 @@ Route::post('/lorem-ipsum-generate', function()
 
 Route::get('/random-user-generate', function()
 {
-        return View::make('user');
+        /*Call Faker Library code from public/php/faker.php*/
+        $fakerPath = app_path().'/../vendor/fzaninotto/faker/src/autoload.php';
+        require_once $fakerPath;
+
+        /*Create an instance*/
+        $faker = Faker\Factory::create();
+
+        return View::make('user', array('appOut' => $faker));
 });
+
+Route::post('/random-user-generate', function()
+{
+	/*Get post data from submitted page*/
+        $postData = Input::get('userLength');
+
+	/*Max number of users*/
+        $maxUsers=99;
+
+	/*Set number of paragraphs for lorem ipsum*/
+        if ($postData  == "" || $postData > $maxUsers) {
+                $userAmount=rand(1,3);
+        }
+        else {
+                $userAmount=$postData;
+        }
+
+	/*Call Faker Library code from public/php/faker.php*/
+        $fakerPath = app_path().'/../vendor/fzaninotto/faker/src/autoload.php';
+        require_once $fakerPath;
+
+        /*Create an instance*/
+	
+        $faker = Faker\Factory::create();
+
+	return View::make('user', array('appOut' => $faker));
+});
+
 
 App::missing(function($exception)
 {

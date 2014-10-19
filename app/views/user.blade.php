@@ -14,17 +14,6 @@
 	<meta charset="UTF-8">
 	<meta name="robots" content="noindex">
 	
-	 <?php
-        //Load Faker Library
-        $fakerPath = app_path().'/../vendor/fzaninotto/faker/src/autoload.php';
-        require_once $fakerPath;
-
-        // use the factory to create a Faker\Generator instance
-        $faker = Faker\Factory::create();
-
-        ?>
-
-
 </head>
 
 <body>
@@ -32,28 +21,28 @@
 	<p>Sometimes you need the ability to populate a database with random user information.</p>
 	<p>
 
-	<form action="{{ url('/lorem-ipsum-generate') }}" method="post">
+	<form action="{{ url('/random-user-generate') }}" method="post">
 
         <fieldset>
 
-                <legend>Lorem Ipsum Generator</legend>
+                <legend>Random User Generator</legend>
 
-                <label for="loremLength"><b>Enter a number between 1 and 99 for the number of lorem ipsum paragraphs.</b></label><br>
-                <input type="text" id="loremLength" name="loremLength" placeholder="Enter Number"><br>
+                <label for="userLength"><b>Enter a number between 1 and 99 for the number of random users to create.</b></label><br>
+                <input type="text" id="userLength" name="userLength" placeholder="Enter Number"><br>
                 <br>
                 <input type="checkbox" id="numberChar" name="numberChar" value="true" <?php if(isset($_POST["numberChar"])) echo "checked='checked'"; ?> >
-                <label for="numberChar"> Append Numerical Character</label><br>
+                <label for="numberChar"> Include Address</label><br>
 
                 <input type="checkbox" id="specialChar" name="specialChar" value="true" <?php if(isset($_POST["specialChar"])) echo "checked='checked'"; ?> >
-                <label for="specialChar"> Append Special Character</label><br>
+                <label for="specialChar"> Include Biography</label><br>
                 <br>
                 <input type="submit" value="Generate Text">
 
         </fieldset>
 
         <fieldset>
-                <legend>Your lorem ipsum text is:</legend>
-                <p id="passwordOut"><?=$faker->name?><br><?=$faker->address?><br><?=$faker->text?></p>
+                <legend>Your random user(s) are:</legend>
+                <p id="passwordOut"><?=$appOut->name?><br><?=$appOut->address?><br><?=$appOut->text?></p>
         </fieldset>
 
         </form>
