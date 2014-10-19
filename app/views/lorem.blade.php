@@ -14,24 +14,6 @@
 	<meta charset="UTF-8">
 	<meta name="robots" content="noindex">
 
-	<?php
-		/*Max number of paragraphs*/
-		$maxParagraphs=99;
-		
-		/*Initial number of Paragraphs loremPost variable is set in routes.php*/
-		$loremAmount=$loremPost;
-
-		/*Initialze number of paragraphs for lorem ipsum*/
-		if ($loremAmount  == "" || $loremAmount > $maxParagraphs) {
-	        $loremAmount=rand(1,3);
-		}
-
-		$generator=new LoremGenerator();
-		$paragraphs=$generator->getParagraphs($loremAmount);
-		$loremText=implode('<p>', $paragraphs);
-        ?>
-
-
 </head>
 
 <body>
@@ -54,7 +36,7 @@
 
 	<fieldset>
                 <legend>Your lorem ipsum text is:</legend>
-		<p id="passwordOut"><?=$loremText?></p> 
+		<p id="passwordOut"><?=$appOut?></p> 
 	</fieldset>
 
 	</form>

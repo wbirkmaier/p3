@@ -18,13 +18,40 @@ Route::get('/', function()
 
 Route::get('/lorem-ipsum-generate', function()
 {
-	return View::make('lorem', array('loremPost' => ''));
+	/*Initial number of Paragraphs set random on first load*/
+	$loremAmount=rand(1,3);
+	
+	/*Code to generate paragraphs*/
+	$ipsumGenerator=new LoremGenerator();
+	$ipsumParagraphs=$ipsumGenerator->getParagraphs($loremAmount);
+	$loremText=implode('<p>', $ipsumParagraphs);
+
+	/*Return view for initial random paragraphs*/
+	return View::make('lorem', array('appOut' => $loremText));
 });
 
 Route::post('/lorem-ipsum-generate', function()
 {
+	/*Get post data from submitted page*/
 	$postData = Input::get('loremLength');
-	return View::make('lorem', array('loremPost' => $postData));
+
+	/*Max number of paragraphs*/
+        $maxParagraphs=99;
+
+	/*Set number of paragraphs for lorem ipsum*/
+        if ($postData  == "" || $postData > $maxParagraphs) {
+                $loremAmount=rand(1,3);
+        }
+	else {
+		$loremAmount=$postData;
+	}
+
+	/*Code to generate paragraphs*/
+        $ipsumGenerator=new LoremGenerator();
+        $ipsumParagraphs=$ipsumGenerator->getParagraphs($loremAmount);
+        $loremText=implode('<p>', $ipsumParagraphs);
+
+	return View::make('lorem', array('appOut' => $loremText));
 });
 
 Route::get('/random-user-generate', function()
