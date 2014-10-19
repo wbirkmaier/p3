@@ -64,7 +64,7 @@ Route::get('/random-user-generate', function()
         $faker = Faker\Factory::create();
 	
 	/*Build array for random single user*/	
-	$singleUser=array($faker->name, $faker->address, $faker->text);
+	$singleUser=array($faker->name, $faker->address, $faker->dateTimeThisCentury->format('m-d-Y'));
 	$singleUser=implode('<br>', $singleUser);
 
         return View::make('user', array('appOut' => $singleUser));
@@ -75,7 +75,7 @@ Route::post('/random-user-generate', function()
 	/*Get post data from submitted page*/
         $postData = Input::get('userLength');
 	$addressData = Input::get('includeAddress');
-	$bioData = Input::get('includeBio');
+	$birthData = Input::get('includeBirth');
 	
 	$manyUsers="";
 
@@ -96,13 +96,41 @@ Route::post('/random-user-generate', function()
 
         /*Create an instance*/
 	$faker = Faker\Factory::create();
+
+	/*Determine which user list to generate*/
+
+	if ($addressData == "true" && $birthData == "true"){
 	
-	/*Generate user list*/
-	for ($i = 0; $i < $userAmount;  ++$i) {
-		$fakeUser=array($faker->name, $faker->address, $faker->text);
-	        $fakeUser=implode('<br>', $fakeUser);
-		$manyUsers=$manyUsers . "<br><br>" . $fakeUser;
+		for ($i = 0; $i < $userAmount;  ++$i) {
+			$fakeUser=array($faker->name, $faker->address, $faker->dateTimeThisCentury->format('m-d-Y'));
+		        $fakeUser=implode('<br>', $fakeUser);
+			$manyUsers=$manyUsers . "<br><br>" . $fakeUser;
+		}
 	}
+
+	elseif ($addressData == "true"){
+		for ($i = 0; $i < $userAmount;  ++$i) {
+                        $fakeUser=array($faker->name, $faker->address);
+                        $fakeUser=implode('<br>', $fakeUser);
+                        $manyUsers=$manyUsers . "<br><br>" . $fakeUser;
+                }
+	}
+	
+	elseif ($birthData == "true"){
+                for ($i = 0; $i < $userAmount;  ++$i) {
+                        $fakeUser=array($faker->name, $faker->dateTimeThisCentury->format('m-d-Y'));
+                        $fakeUser=implode('<br>', $fakeUser);
+                        $manyUsers=$manyUsers . "<br><br>" . $fakeUser;
+                }
+        }
+	else {
+		for ($i = 0; $i < $userAmount;  ++$i) {
+                        $fakeUser=array($faker->name);
+                        $fakeUser=implode('<br>', $fakeUser);
+                        $manyUsers=$manyUsers . "<br><br>" . $fakeUser;
+                }
+	}
+
 
 	return View::make('user', array('appOut' => $manyUsers));
 });

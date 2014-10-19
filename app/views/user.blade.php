@@ -33,8 +33,8 @@
                 <input type="checkbox" id="includeAddress" name="includeAddress" value="true" <?php if(isset($_POST["includeAddress"])) echo "checked='checked'"; ?> >
                 <label for="includeAddress"> Include Address</label><br>
 
-                <input type="checkbox" id="includeBio" name="includeBio" value="true" <?php if(isset($_POST["includeBio"])) echo "checked='checked'"; ?> >
-                <label for="includeBio"> Include Biography</label><br>
+                <input type="checkbox" id="includeBirth" name="includeBirth" value="true" <?php if(isset($_POST["includeBirth"])) echo "checked='checked'"; ?> >
+                <label for="includeBirth"> Include Birthday</label><br>
                 <br>
                 <input type="submit" value="Generate Users">
 
