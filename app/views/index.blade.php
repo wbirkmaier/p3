@@ -2,8 +2,6 @@
 
 @section('content')
 
-	<h1>Developer's Best Friend</h1>
-	<br>
 	<h2>Lorem Ipsum</h2>
 	<p>Lorem Ipsum is dummy text that is used in order to facilitate page layouts, where text is needed, but the focus is on the layout rather than the content. Most viewers have a tendancy to focus on the text rather than the layout, this prevents that.</p>
 	<p>Keep Calm and <a href='/lorem-ipsum-generate'>Generate</a> On</p>
