@@ -13,6 +13,7 @@
 
 Route::get('/', function()
 {
+	/*Homepage*/
 	return View::make('index');
 });
 
@@ -51,6 +52,7 @@ Route::post('/lorem-ipsum-generate', function()
         $ipsumParagraphs=$ipsumGenerator->getParagraphs($loremAmount);
         $loremText=implode('<p>', $ipsumParagraphs);
 
+	/*Return view with number of paragraphs specified*/
 	return View::make('lorem', array('appOut' => $loremText));
 });
 
@@ -67,6 +69,7 @@ Route::get('/random-user-generate', function()
 	$singleUser=array($faker->name, $faker->address, $faker->dateTimeThisCentury->format('m-d-Y'));
 	$singleUser=implode('<br>', $singleUser);
 
+	/*Return view with single random user*/
         return View::make('user', array('appOut' => $singleUser));
 });
 
@@ -77,6 +80,7 @@ Route::post('/random-user-generate', function()
 	$addressData = Input::get('includeAddress');
 	$birthData = Input::get('includeBirth');
 	
+	/*Initialze the array for the final user output*/	
 	$manyUsers="";
 
 	/*Max number of users*/
@@ -98,7 +102,6 @@ Route::post('/random-user-generate', function()
 	$faker = Faker\Factory::create();
 
 	/*Determine which user list to generate*/
-
 	if ($addressData == "true" && $birthData == "true"){
 	
 		for ($i = 0; $i < $userAmount;  ++$i) {
@@ -131,11 +134,11 @@ Route::post('/random-user-generate', function()
                 }
 	}
 
-
+	/*Return final view to the user*/
 	return View::make('user', array('appOut' => $manyUsers));
 });
 
-
+/*Default catch all view for wrong routes*/
 App::missing(function($exception)
 {
         return View::make('oops');
