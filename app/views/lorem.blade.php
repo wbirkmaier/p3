@@ -29,7 +29,7 @@
 
 	<fieldset>
                 <legend>Your lorem ipsum text is:</legend>
-		<p id="loremOut"><?=$appOut?></p> 
+		<p id="loremOut">{{$appOut}}</p> 
 	</fieldset>
 
 	</form>

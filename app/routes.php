@@ -76,7 +76,7 @@ Route::get('/random-user-generate', function()
 Route::post('/random-user-generate', function()
 {
 	/*Get post data from submitted page*/
-        $postData = Input::get('userLength');
+        $amountData = Input::get('userLength');
 	$addressData = Input::get('includeAddress');
 	$birthData = Input::get('includeBirth');
 	
@@ -87,11 +87,11 @@ Route::post('/random-user-generate', function()
         $maxUsers=99;
 
 	/*Set number of random users*/
-        if ($postData  == "" || $postData > $maxUsers || $postData == 0) {
+        if ($amountData  == "" || $amountData > $maxUsers || $amountData == 0) {
                 $userAmount=rand(1,10);
         }
         else {
-                $userAmount=$postData;
+                $userAmount=$amountData;
         }
 
 	/*Call Faker Library code from public/php/faker.php*/

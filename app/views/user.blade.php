@@ -35,7 +35,7 @@
 
         <fieldset>
                 <legend>Your random user(s) are:</legend>
-		<p id="userOut"><?=$appOut?></p>
+		<p id="userOut">{{$appOut}}</p>
         </fieldset>
 
         </form>
