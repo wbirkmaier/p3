@@ -19,7 +19,7 @@
 
 		<legend>Lorem Ipsum Generator</legend>
 
-		<label for="loremLength"><b>Enter a number between 1 and 99 for the number of lorem ipsum paragraphs to generate below. A larger number or blank field will generate 1 to 3 paragraphs randomly.</b><br></label>
+		<label for="loremLength"><b>Enter a number between 1 and 99 for the number of lorem ipsum paragraphs to generate below. A number outside the range or blank field will generate 1 to 3 paragraphs randomly.</b><br></label>
 		<br>
 		<input type="text" id="loremLength" name="loremLength" placeholder="Enter Number"><br>
 		<br>

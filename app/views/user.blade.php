@@ -20,7 +20,7 @@
 
                 <legend>Random User Generator</legend>
 
-                <label for="userLength"><b>Enter a number between 1 and 99 for the number of random users to create or click the generate button for a random amount.</b></label><br>
+                <label for="userLength"><b>Enter a number between 1 and 99 for the number of random users to create or click the generate button for a random amount. A number outside the range or blank field will generate 1 to 10 users randomly.</b></label><br>
                 <input type="text" id="userLength" name="userLength" placeholder="Enter Number"><br>
                 <br>
                 <input type="checkbox" id="includeAddress" name="includeAddress" value="true" <?php if(isset($_POST["includeAddress"])) echo "checked='checked'"; ?> >
