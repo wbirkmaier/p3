@@ -40,7 +40,7 @@ Route::post('/lorem-ipsum-generate', function()
         $maxParagraphs=99;
 
 	/*Set number of paragraphs for lorem ipsum*/
-        if ($postData  == "" || $postData > $maxParagraphs || $postData == 0) {
+        if ($postData  == "" || $postData > $maxParagraphs || $postData <= 0) {
                 $loremAmount=rand(1,3);
         }
 	else {
@@ -87,7 +87,7 @@ Route::post('/random-user-generate', function()
         $maxUsers=99;
 
 	/*Set number of random users*/
-        if ($amountData  == "" || $amountData > $maxUsers || $amountData == 0) {
+        if ($amountData  == "" || $amountData > $maxUsers || $amountData <= 0) {
                 $userAmount=rand(1,10);
         }
         else {
