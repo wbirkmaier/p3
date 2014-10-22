@@ -14,7 +14,7 @@
 	<p>Sometimes you need the ability to populate a database with random user information.</p>
 	<br>
 
-	<form action="{{ url('/random-user-generate') }}" method="post">
+	{{Form::open(array('url'=>'/random-user-generate','method'=>'post'))}}
 
         <fieldset>
 
@@ -38,7 +38,7 @@
 		<p id="userOut">{{$appOut}}</p>
         </fieldset>
 
-        </form>
+	{{Form::close()}}
 
 	<p>You can <a href='/'>Return Home</a> from this place.</p>
 

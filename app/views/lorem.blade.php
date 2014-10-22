@@ -13,7 +13,7 @@
 	<h2>Lorem Ipsum</h2>
 	<p>Lorem Ipsum is dummy text that is used in order to facilitate page layouts, where text is needed, but the focus is on the layout rather than the content. Most viewers have a tendancy to focus on the text rather than the layout, this prevents that.</p>
 
-	<form action="{{ url('/lorem-ipsum-generate') }}" method="post">
+	{{Form::open(array('url'=>'/lorem-ipsum-generate','method'=>'post'))}}
 
 	<fieldset>
 
@@ -32,7 +32,7 @@
 		<p id="loremOut">{{$appOut}}</p> 
 	</fieldset>
 
-	</form>
+	{{Form::close()}}	
 
 	<p>You can <a href='/'>Return Home</a> from this place.</p>
 
