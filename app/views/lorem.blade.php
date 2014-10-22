@@ -28,7 +28,7 @@
 	</fieldset>
 
 	<fieldset>
-                <legend>Your lorem ipsum text is:</legend>
+		<legend>Your lorem ipsum text is:</legend>
 		<p id="loremOut">{{$appOut}}</p> 
 	</fieldset>
 
