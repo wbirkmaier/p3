@@ -17,8 +17,7 @@
 	{{Form::open(array('url'=>'/random-user-generate','method'=>'post'))}}
 
         <fieldset>
-
-                <legend>Random User Generator</legend>
+		<legend>Random User Generator</legend>
 
 		{{Form::label('userLength','Enter a number between 1 and 99 for the number of random users to create or click the generate button for a random amount. A number outside the range or blank field will generate 1 to 10 users randomly.')}}
 		<br>
@@ -37,9 +36,9 @@
         </fieldset>
 
         <fieldset>
-                <legend>Your random user(s) are:</legend>
+		<legend>Your random user(s) are:</legend>
 		<p id="userOut">{{$appOut}}</p>
-        </fieldset>
+	</fieldset>
 
 	{{Form::close()}}
 
