@@ -20,16 +20,18 @@
 
                 <legend>Random User Generator</legend>
 
-                <label for="userLength"><b>Enter a number between 1 and 99 for the number of random users to create or click the generate button for a random amount. A number outside the range or blank field will generate 1 to 10 users randomly.</b></label><br>
-                <input type="text" id="userLength" name="userLength" placeholder="Enter Number"><br>
+		{{Form::label('userLength','Enter a number between 1 and 99 for the number of random users to create or click the generate button for a random amount. A number outside the range or blank field will generate 1 to 10 users randomly.')}}
+		<br>
+		{{Form::text('userLength','',array('id'=>'userLength','placeholder'=>'Enter Number'))}}<br>
                 <br>
                 <input type="checkbox" id="includeAddress" name="includeAddress" value="true" <?php if(isset($_POST["includeAddress"])) echo "checked='checked'"; ?> >
-                <label for="includeAddress"> Include Address</label><br>
-
+		{{Form::label('includeAddress','Include Address')}}
+		<br>
                 <input type="checkbox" id="includeBirth" name="includeBirth" value="true" <?php if(isset($_POST["includeBirth"])) echo "checked='checked'"; ?> >
-                <label for="includeBirth"> Include Birthday</label><br>
+		{{Form::label('includeBirth','Include Birthday')}}
+		<br>
                 <br>
-                <input type="submit" value="Generate Users">
+		{{Form::submit('Generate Users')}}
 
         </fieldset>
 
